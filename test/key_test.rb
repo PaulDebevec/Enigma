@@ -15,4 +15,9 @@ class KeyTest < Minitest::Test
     assert_equal "56", key.c
     assert_equal "63", key.d
   end
+
+  def test_random_key_generator
+    key = Key.new
+    assert_equal 5, key.number_key.length
+  end
 end
