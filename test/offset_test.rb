@@ -8,4 +8,8 @@ class OffsetTest < Minitest::Test
     assert_instance_of Offset, offset
   end
 
+  def test_it_initializes
+    offset = Offset.new("021119")
+    assert_equal "021119", offset.date
+  end
 end
