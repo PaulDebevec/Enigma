@@ -8,4 +8,8 @@ class Key
     @c = @number_key[2..3]
     @d = @number_key[3..4]
   end
+
+  def random_key
+    rand.to_s[2..6]
+  end
 end
