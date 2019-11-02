@@ -11,6 +11,10 @@ class OffsetTest < Minitest::Test
   def test_it_initializes
     offset = Offset.new("021119")
     assert_equal "021119", offset.date
+    assert_equal "2", offset.a
+    assert_equal "1", offset.b
+    assert_equal "6", offset.c
+    assert_equal "1", offset.d
   end
 
   def test_initialize_default_transmission_date
