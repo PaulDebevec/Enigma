@@ -19,4 +19,9 @@ class OffsetTest < Minitest::Test
     assert_equal date, offset.date
     assert_equal date, offset.transmission_date
   end
+
+  def test_date_key_offsets
+    offset = Offset.new("021119")
+    assert_equal "2161", offset.date_key_offsets
+  end
 end
