@@ -13,6 +13,16 @@ class Enigma
     end
     { encryption: encrypted_message.join(""), key: shift.key.number_key, date: shift.offset.date }
   end
+
+  def decrypt(encrypted_message, key, date)
+    shift = Shift.new(key, date)
+    decrypted_message = encrypted_message.chars.map.with_index(0) do |character, index|
+      offset = get_offset(shift, index)
+      get_offset_character(character, -offset)
+    end
+    { decryption: decrypted_message.join(""), key: shift.key.number_key, date: shift.offset.date }
+  end
+
   def get_offset_character(character, offset)
     if @character_set.include?(character)
       offset_index = @character_set.index(character) + offset
@@ -20,6 +30,8 @@ class Enigma
     else
       character
     end
+  end
+
   def get_offset(shift, index)
     remainder = index % 4
     return shift.a if remainder == 0
