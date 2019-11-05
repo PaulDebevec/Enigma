@@ -22,6 +22,20 @@ class EnigmaTest < Minitest::Test
     assert_equal expected, actual
   end
 
+  def test_it_encrypts_unit
+    skip
+    shift = mock
+    shift.expects(:a).twice.returns 5
+    shift.stubs(:b).returns 5
+    shift.expects(:c).returns 5
+    shift.expects(:d).returns 5
+    Shift.expects(:new).returns shift
+    enigma = Enigma.new
+    actual = enigma.encrypt("hello world", "02715", "040895")
+    expected = { encryption: "keder ohulw", key: "02715", date: "040895" }
+    assert_equal expected, actual
+  end
+
   def test_it_decrypts
     enigma = Enigma.new
     actual = enigma.decrypt("keder ohulw", "02715", "040895")
