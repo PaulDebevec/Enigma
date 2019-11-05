@@ -39,4 +39,11 @@ class Enigma
     return shift.c if remainder == 2
     return shift.d if remainder == 3
   end
+
+  def crack(message, date = nil)
+    (0..99999).each do |key|
+      decrypted_msg = decrypt(message, key.to_s.rjust(5, "0"), date)
+      return decrypted_msg if decrypted_msg[:decryption].chomp.end_with?(" end")
+    end
+  end
 end
