@@ -7,7 +7,7 @@ class ShiftTest < Minitest::Test
     assert_instance_of Shift, shift
   end
 
-  def test_initialize
+  def test_it_initializes
     shift = Shift.new("42563", "021119")
     assert_equal 44, shift.a
     assert_equal 26, shift.b
