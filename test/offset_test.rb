@@ -21,7 +21,7 @@ class OffsetTest < Minitest::Test
     date = Time.now.strftime("%d%m%y")
     offset = Offset.new
     assert_equal date, offset.date
-    assert_equal date, offset.transmission_date
+    assert_equal date, offset.transmission_date_generator
   end
 
   def test_date_key_offsets
