@@ -5,14 +5,13 @@ In functionality I have Enigme#encrypt and Enigma#decrypt successfully implement
 Last for functionality, I successfully completed the cracking method with a command line interface.
 
 ### Object Oriented Programming(3)
-My project is broken out into 4 classes, all with single responsibility. All classes contain logical components related to that class. All methods are under 7 lines, and no class is over 60 lines. Variable names clearly communicate their purpose
+This program is broken out into 4 classes, all with single responsibility. All classes contain logical components related to that class. All methods are under 7 lines, and no class is over 50 lines. Variable names clearly communicate their purpose.
 
-### Test Driven Development(3)
-Every method is tested at both unit and integration level.
-My git history shows that all tests were written first to follow TDD. Test coverage is 100%.
+### Test Driven Development(2)
+Taking a critical look at my code shows that I do not have an individual test written for my helper method get_offset in the enigma class. My git history shows that all other tests were written first to follow TDD. Test coverage is 100%.
 
-### Version Control(3)
- As of writing this the repo contains 56 commits and 12 pull requests. All commits will show that there is single piece of functionality in each commit.
+### Version Control(4)
+This repo currently contains 60 commits and 15 pull requests. All commits will show that there is single piece of functionality in each commit.
 
 
 ### Summery
