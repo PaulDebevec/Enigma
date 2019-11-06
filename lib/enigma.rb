@@ -7,7 +7,7 @@ class Enigma
 
   def encrypt(message, key = nil, date = nil)
     shift = Shift.new(key, date)
-    encrypted_message = message.chars.map.with_index(0) do |character, index|
+    encrypted_message = message.downcase.chars.map.with_index(0) do |character, index|
       offset = get_offset(shift, index)
       get_offset_character(character, offset)
     end
