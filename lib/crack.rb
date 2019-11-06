@@ -7,6 +7,6 @@ date = ARGV[2]
 message_to_crack = File.read(input_file)
 enigma = Enigma.new
 decryption = enigma.crack(message_to_crack, date)
-File.open(output_file, "w") {|f| f.write(decryption[:decryption]) }
+File.open(output_file, "w") {|file| file.write(decryption[:decryption]) }
 
 p "Created '#{output_file}' with the key #{decryption[:key]} and date #{decryption[:date]}"
